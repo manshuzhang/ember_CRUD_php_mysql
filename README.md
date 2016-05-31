@@ -1,4 +1,4 @@
-# Php-ember-test
+# Ember-PHP-mysql
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -20,10 +20,20 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
+
+## Server Side Setup
+
+* Install MySQL
+* Create database with sample Dump.sql file
+* Build ember project
+* Move 'rest' folder to dist folder, request namescape is set in app->adapters->applications.js
+* If needed, update mysql connection in rest->restManager.php
+
+
 ## Running / Development
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Set 'dist' as server root
+* Visit your server address
 
 ### Code Generators
 

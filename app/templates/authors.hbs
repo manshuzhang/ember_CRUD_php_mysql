@@ -1,0 +1,15 @@
+<h1>Meet All Authors</h1>
+
+
+{{#each model as |author|}}
+{{author-edit author=author}}
+{{/each}}
+
+<br>
+<hr>
+<h2>Add New Author:</h2>
+<p>First Name: {{input value=firstName}}</p>
+<p>Last Name: {{input value=lastName}}</p>
+<button {{action "addAuthor"}}>Add</button>
+<br/><br/><br/>
+

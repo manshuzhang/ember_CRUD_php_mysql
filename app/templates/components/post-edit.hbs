@@ -1,0 +1,21 @@
+{{#if isEditing}}
+		<p>Title: {{input value=post.title placeholder=post.title}}</p> 
+		<p>Body: {{input value=post.body placeholder=post.body}}</p>
+		<select onchange={{action (mut selectAuthor) value="target.value"}} >
+			  {{#each authors as |authorChoice|}}
+			    <option value={{authorChoice.id}} selected={{eq selectAuthor authorChoice.id}}>{{authorChoice.firstName}} {{authorChoice.lastName}}</option>
+			  {{/each}}
+			</select>
+	  	<button {{action "updatePost" post}} class="btn btn-info" style="">Update</button> 
+	{{else}}
+		<p>Title: {{post.title}}</p>
+		<p>Body: {{post.body}}</p>
+		{{#each authors as |author|}}
+		{{#if (eq author.id post.aid)}}
+		<p style="font-size:12px;color:blue;font-style: italic;">Author: {{author.firstName}} {{author.lastName}}</p>
+		{{/if}}
+		{{/each}}
+		<button {{action "editToggle"}} class="btn btn-info" style="">Edit</button>
+	{{/if}}
+	<button {{action "delPost" post}} class="btn btn-info">Delete</button>
+	<hr>

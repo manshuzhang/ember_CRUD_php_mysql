@@ -1,0 +1,11 @@
+{{#if isEditing}}
+<p>First Name: {{input value=author.firstName placeholder=author.firstName}}</p> 
+<p>Last Name: {{input value=author.lastName placeholder=author.lastName}}</p>
+<button {{action "updateAuthor" author}}>Update</button>
+<br/>
+{{else}}
+<p>{{author.firstName}} {{author.lastName}} {{home-random}}
+<button {{action "delAuthor" author}}>Delete</button>
+<button {{action "editAuthor"}}>Edit</button></p>
+<br/>
+{{/if}}
